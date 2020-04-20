@@ -13,4 +13,3 @@ docs/
 ^gfortran.*
 ^tic\.R$
 ^\.travis\.yml$
-.Rprofile

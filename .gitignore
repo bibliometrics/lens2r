@@ -32,5 +32,3 @@ vignettes/*.pdf
 .Renviron
 # pkgdown site
 docs/
-.Rprofile
-*.gitignore
