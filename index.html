@@ -47,6 +47,21 @@
 <li>
   <a href="reference/index.html">Reference</a>
 </li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+<li>
+      <a href="articles/lens2r_usage.html">lens2r Package Usage</a>
+    </li>
+    <li>
+      <a href="articles/understanding_lens_api.html">Understanding Lens.org API</a>
+    </li>
+  </ul>
+</li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
@@ -73,39 +88,32 @@
 <!-- badges: start -->
 
 <p><a href="https://github.com/sbalci/lens2r/actions"><img src="https://github.com/sbalci/lens2r/workflows/R%20CMD%20Check%20via%20%7Btic%7D/badge.svg?branch=master" alt="R CMD Check via {tic}"></a> <a href="https://travis-ci.com/sbalci/lens2r"><img src="https://travis-ci.com/sbalci/lens2r.svg?branch=master" alt="Travis build status"></a> <!-- badges: end --></p>
-<p>The goal of lens2r is to …</p>
+<p>The goal of lens2r is to get Lens.org scholar data into R environment. You need Lens.org scholar API token to access data, you can <a href="https://www.lens.org/lens/user/subscriptions#scholar">get one here</a>.</p>
+<blockquote>
+<p>Scholarly Search and Analysis<br>
+Lens serves over 200 million scholarly records, compiled and harmonised from Microsoft Academic, PubMed and Crossref, enhanced with UnPaywall open access information, CORE full text and links to ORCID. The full scholarly citation graph is provided for the first time as an open public resource.</p>
+</blockquote>
+<p>🔬🔬🔬🔬 UNDER CONSTRUCTION 🛠⛔️⚠️🔩</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<p>You can install the released version of lens2r from <a href="https://CRAN.R-project.org">CRAN</a> with:</p>
-<div class="sourceCode" id="cb1"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"lens2r"</span>)</pre></div>
-<p>And the development version from <a href="https://github.com/">GitHub</a> with:</p>
-<div class="sourceCode" id="cb2"><pre class="r"><span class="co"># install.packages("devtools")</span>
+<!-- You can install the released version of lens2r from [CRAN](https://CRAN.R-project.org) with: -->
+<!-- ``` r -->
+<!-- install.packages("lens2r") -->
+<!-- ``` -->
+<p>You can install the development version from <a href="https://github.com/">GitHub</a> with:</p>
+<div class="sourceCode" id="cb1"><pre class="r"><span class="co"># install.packages("devtools")</span>
 <span class="kw pkg">devtools</span><span class="kw ns">::</span><span class="fu">install_github</span>(<span class="st">"sbalci/lens2r"</span>)</pre></div>
 </div>
-<div id="example" class="section level2">
+<div id="examples" class="section level2">
 <h2 class="hasAnchor">
-<a href="#example" class="anchor"></a>Example</h2>
-<!-- This is a basic example which shows you how to solve a common problem: -->
-<div class="sourceCode" id="cb3"><pre class="r"># library(lens2r)</pre></div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>request &lt;-<span class="st"> '{</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="st">    "query": {</span></span>
-<span id="cb4-3"><a href="#cb4-3"></a><span class="st">        "match_phrase": {</span></span>
-<span id="cb4-4"><a href="#cb4-4"></a><span class="st">            "author.affiliation.name": "Harvard University"</span></span>
-<span id="cb4-5"><a href="#cb4-5"></a><span class="st">        }</span></span>
-<span id="cb4-6"><a href="#cb4-6"></a><span class="st">    },</span></span>
-<span id="cb4-7"><a href="#cb4-7"></a><span class="st">    "size": 1,</span></span>
-<span id="cb4-8"><a href="#cb4-8"></a><span class="st">    "sort": [{</span></span>
-<span id="cb4-9"><a href="#cb4-9"></a><span class="st">        "year_published": "desc"</span></span>
-<span id="cb4-10"><a href="#cb4-10"></a><span class="st">    }]</span></span>
-<span id="cb4-11"><a href="#cb4-11"></a><span class="st">}'</span></span>
-<span id="cb4-12"><a href="#cb4-12"></a></span>
-<span id="cb4-13"><a href="#cb4-13"></a>output_content &lt;-<span class="st"> </span><span class="kw">content</span>(data, <span class="st">"text"</span>)</span>
-<span id="cb4-14"><a href="#cb4-14"></a></span>
-<span id="cb4-15"><a href="#cb4-15"></a></span>
-<span id="cb4-16"><a href="#cb4-16"></a>output &lt;-<span class="st"> </span>jsonlite<span class="op">::</span><span class="kw">fromJSON</span>(output_content)</span>
-<span id="cb4-17"><a href="#cb4-17"></a>output &lt;-<span class="st"> </span>output<span class="op">$</span>data</span></code></pre></div>
-<div class="sourceCode" id="cb5"><pre class="r"><span class="no">request</span> <span class="kw">&lt;-</span> <span class="st">'{
+<a href="#examples" class="anchor"></a>Examples</h2>
+<div class="sourceCode" id="cb2"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">lens2r</span>)
+<span class="co">#&gt; Loading required package: httr</span>
+<span class="co">#&gt; Loading required package: jsonlite</span>
+<span class="co">#&gt; Loading required package: magrittr</span>
+
+<span class="no">request</span> <span class="kw">&lt;-</span> <span class="st">'{
     "query": {
         "match_phrase": {
             "author.affiliation.name": "Harvard University"
@@ -116,25 +124,71 @@
         "year_published": "desc"
     }]
 }'</span>
-<span class="no">data</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/get_scholarly_data.html">get_scholarly_data</a></span>(<span class="kw">query</span> <span class="kw">=</span> <span class="no">request</span>)
+<span class="no">data</span> <span class="kw">&lt;-</span> <span class="kw pkg">lens2r</span><span class="kw ns">::</span><span class="fu"><a href="reference/get_scholarly_data.html">get_scholarly_data</a></span>(<span class="kw">query</span> <span class="kw">=</span> <span class="no">request</span>)
 
-<span class="no">output_content</span> <span class="kw">&lt;-</span> <span class="fu">content</span>(<span class="no">data</span>, <span class="st">"text"</span>)
-
-<span class="co"># output &lt;- jsonlite::fromJSON(output_content)</span>
+<span class="no">output_content</span> <span class="kw">&lt;-</span> <span class="kw pkg">httr</span><span class="kw ns">::</span><span class="fu"><a href="https://httr.r-lib.org/reference/content.html">content</a></span>(<span class="no">data</span>, <span class="st">"text"</span>)
 
 <span class="no">output_flatten</span> <span class="kw">&lt;-</span> <span class="kw pkg">jsonlite</span><span class="kw ns">::</span><span class="fu"><a href="https://jeroen.cran.dev/jsonlite/reference/fromJSON.html">fromJSON</a></span>(<span class="no">output_content</span>, <span class="kw">flatten</span> <span class="kw">=</span> <span class="fl">TRUE</span>)
 
 <span class="no">output_flatten_data</span> <span class="kw">&lt;-</span> <span class="no">output_flatten</span>$<span class="no">data</span>
 
-<span class="no">output_flatten</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span>(<span class="no">output_flatten</span>)</pre></div>
-<div class="sourceCode" id="cb6"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>Scholarly Works<span class="op">:</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a></span>
-<span id="cb6-3"><a href="#cb6-3"></a>[POST] https<span class="op">:</span><span class="er">//</span>api.lens.org<span class="op">/</span>scholarly<span class="op">/</span>search</span>
-<span id="cb6-4"><a href="#cb6-4"></a>[GET] https<span class="op">:</span><span class="er">//</span>api.lens.org<span class="op">/</span>scholarly<span class="op">/</span>search</span>
-<span id="cb6-5"><a href="#cb6-5"></a>Collections<span class="op">:</span></span>
-<span id="cb6-6"><a href="#cb6-6"></a></span>
-<span id="cb6-7"><a href="#cb6-7"></a>[POST] https<span class="op">:</span><span class="er">//</span>api.lens.org<span class="op">/</span>collections<span class="op">/</span>{collection_id}</span>
-<span id="cb6-8"><a href="#cb6-8"></a>[GET] https<span class="op">:</span><span class="er">//</span>api.lens.org<span class="op">/</span>collections<span class="op">/</span>{collection_id}</span></code></pre></div>
+<span class="no">output_flatten_data</span>
+<span class="co">#&gt;               lens_id                          created publication_type</span>
+<span class="co">#&gt; 1 040-450-672-971-619 2019-08-12T03:30:43.659000+00:00  journal article</span>
+<span class="co">#&gt;                                                                          authors</span>
+<span class="co">#&gt; 1 NA, Mark, Tushnet, M, magid, 1845306793, Harvard University, grid.38142.3c, US</span>
+<span class="co">#&gt;                                                                                                title</span>
+<span class="co">#&gt; 1 Institutions protecting constitutional democracy: Some conceptual and methodological preliminaries</span>
+<span class="co">#&gt;   volume issue languages          references</span>
+<span class="co">#&gt; 1     70     2        en 199-199-909-278-791</span>
+<span class="co">#&gt;                                   fields_of_study</span>
+<span class="co">#&gt; 1 Liberal democracy, Sociology, Law, Constitution</span>
+<span class="co">#&gt;                                                                                                      source_urls</span>
+<span class="co">#&gt; 1 html, html, https://www.utpjournals.press/doi/abs/10.3138/utlj.2019-05-27, https://muse.jhu.edu/article/731612</span>
+<span class="co">#&gt;                                                                                                                                                                                                   abstract</span>
+<span class="co">#&gt; 1 Chapter 9 of the South African Constitution refers to ‘institutions protecting constitutional democracy’ (IPDs). Contemporary constitution designers have written into new constitutions numerous suc...</span>
+<span class="co">#&gt;   year_published references_count</span>
+<span class="co">#&gt; 1           2020                1</span>
+<span class="co">#&gt;                                      external_ids start_page end_page</span>
+<span class="co">#&gt; 1 magid, doi, 2964660712, 10.3138/utlj.2019-05-27         95      106</span>
+<span class="co">#&gt;   author_count            date_published                      source.title</span>
+<span class="co">#&gt; 1            1 2020-03-01T00:00:00+00:00 University of Toronto Law Journal</span>
+<span class="co">#&gt;   source.type            source.publisher        source.issn source.country</span>
+<span class="co">#&gt; 1     Journal University of Toronto Press 00420220, 17101174         Canada</span>
+<span class="co">#&gt;   source.asjc_codes                 source.asjc_subjects</span>
+<span class="co">#&gt; 1        3308, 3312 Law, Sociology and Political Science</span>
+
+<span class="no">output_flatten</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span>(<span class="no">output_flatten</span>)
+
+<span class="no">output_flatten</span>
+<span class="co">#&gt;    total        data.lens_id                     data.created</span>
+<span class="co">#&gt; 1 446110 040-450-672-971-619 2019-08-12T03:30:43.659000+00:00</span>
+<span class="co">#&gt;   data.publication_type</span>
+<span class="co">#&gt; 1       journal article</span>
+<span class="co">#&gt;                                                                     data.authors</span>
+<span class="co">#&gt; 1 NA, Mark, Tushnet, M, magid, 1845306793, Harvard University, grid.38142.3c, US</span>
+<span class="co">#&gt;                                                                                           data.title</span>
+<span class="co">#&gt; 1 Institutions protecting constitutional democracy: Some conceptual and methodological preliminaries</span>
+<span class="co">#&gt;   data.volume data.issue data.languages     data.references</span>
+<span class="co">#&gt; 1          70          2             en 199-199-909-278-791</span>
+<span class="co">#&gt;                              data.fields_of_study</span>
+<span class="co">#&gt; 1 Liberal democracy, Sociology, Law, Constitution</span>
+<span class="co">#&gt;                                                                                                 data.source_urls</span>
+<span class="co">#&gt; 1 html, html, https://www.utpjournals.press/doi/abs/10.3138/utlj.2019-05-27, https://muse.jhu.edu/article/731612</span>
+<span class="co">#&gt;                                                                                                                                                                                              data.abstract</span>
+<span class="co">#&gt; 1 Chapter 9 of the South African Constitution refers to ‘institutions protecting constitutional democracy’ (IPDs). Contemporary constitution designers have written into new constitutions numerous suc...</span>
+<span class="co">#&gt;   data.year_published data.references_count</span>
+<span class="co">#&gt; 1                2020                     1</span>
+<span class="co">#&gt;                                 data.external_ids data.start_page data.end_page</span>
+<span class="co">#&gt; 1 magid, doi, 2964660712, 10.3138/utlj.2019-05-27              95           106</span>
+<span class="co">#&gt;   data.author_count       data.date_published                 data.source.title</span>
+<span class="co">#&gt; 1                 1 2020-03-01T00:00:00+00:00 University of Toronto Law Journal</span>
+<span class="co">#&gt;   data.source.type       data.source.publisher   data.source.issn</span>
+<span class="co">#&gt; 1          Journal University of Toronto Press 00420220, 17101174</span>
+<span class="co">#&gt;   data.source.country data.source.asjc_codes</span>
+<span class="co">#&gt; 1              Canada             3308, 3312</span>
+<span class="co">#&gt;              data.source.asjc_subjects results</span>
+<span class="co">#&gt; 1 Law, Sociology and Political Science       1</span></pre></div>
 </div>
 <div id="similar-works" class="section level2">
 <h2 class="hasAnchor">
@@ -145,12 +199,18 @@
 <p>A package to access patent data from the Lens Patent Database Deprecated</p>
 <p><a href="https://github.com/poldham/lensr" class="uri">https://github.com/poldham/lensr</a></p>
 </div>
+<div id="covidlens" class="section level3">
+<h3 class="hasAnchor">
+<a href="#covidlens" class="anchor"></a>covidlens</h3>
+<p><a href="https://github.com/poldham/covidlens" class="uri">https://github.com/poldham/covidlens</a></p>
+<p>Scientific and Patent Literature on Covid-19 Corona Virus from the Lens for R <a href="https://poldham.github.io/covidlens/" class="uri">https://poldham.github.io/covidlens/</a></p>
+</div>
 <div id="r-codes-in-lensorg-api-documentation" class="section level3">
 <h3 class="hasAnchor">
 <a href="#r-codes-in-lensorg-api-documentation" class="anchor"></a>R codes in Lens.org API documentation</h3>
 <p><a href="https://docs.api.lens.org/samples.html#r" class="uri">https://docs.api.lens.org/samples.html#r</a></p>
 <p>These are the basic codes this package uses</p>
-<div class="sourceCode" id="cb7"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">require</a></span>(<span class="no">httr</span>)
+<div class="sourceCode" id="cb3"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">require</a></span>(<span class="no">httr</span>)
 <span class="no">getScholarlyData</span> <span class="kw">&lt;-</span> <span class="kw">function</span>(<span class="no">token</span>, <span class="no">query</span>){
     <span class="no">url</span> <span class="kw">&lt;-</span> <span class="st">'https://api.lens.org/scholarly/search'</span>
     <span class="no">headers</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">'Authorization'</span> <span class="kw">=</span> <span class="no">token</span>, <span class="st">'Content-Type'</span> <span class="kw">=</span> <span class="st">'application/json'</span>)
@@ -170,7 +230,18 @@
 }'</span>
 <span class="no">data</span> <span class="kw">&lt;-</span> <span class="fu">getScholarlyData</span>(<span class="no">token</span>, <span class="no">request</span>)
 <span class="fu"><a href="https://httr.r-lib.org/reference/content.html">content</a></span>(<span class="no">data</span>, <span class="st">"text"</span>)</pre></div>
+<hr>
+<p><a class="twitter-follow-button" data-show-count="false" href="https://twitter.com/serdarbalci">Follow @serdarbalci</a></p>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><p><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/bS0teIs"><img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee"><span style="margin-left:15px;font-size:28px !important;">Buy me a coffee</span></a></p>
+<p><a href="https://paypal.me/serdarbalci" class="uri">https://paypal.me/serdarbalci</a></p>
+<hr>
+<p><img src="https://cdn.buymeacoffee.com/buttons/arial-orange.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;"><br><img src="https://img.shields.io/twitter/follow/serdarbalci?style=social" alt="Twitter Follow"><img src="https://img.shields.io/github/followers/sbalci?style=social" alt="GitHub followers"><a href="https://saythanks.io/to/sbalci"><img src="https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg" alt="Say Thanks!"></a></p>
 </div>
+</div>
+<div id="development-status" class="section level2">
+<h2 class="hasAnchor">
+<a href="#development-status" class="anchor"></a>Development Status</h2>
+<p><a href="https://www.repostatus.org/#wip"><img src="https://www.repostatus.org/badges/latest/wip.svg" alt="Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public."></a> <a href="https://github.com/sbalci/lens2r/actions"><img src="https://github.com/sbalci/lens2r/workflows/R%20CMD%20Check%20via%20%7Btic%7D/badge.svg?branch=master" alt="R CMD Check via {tic}"></a> <a href="https://travis-ci.com/sbalci/lens2r"><img src="https://travis-ci.com/sbalci/lens2r.svg?branch=master" alt="Travis build status"></a></p>
 </div>
 </div>
   </div>

@@ -1,6 +1,8 @@
 pandoc: 2.7.3
 pkgdown: 1.5.1
 pkgdown_sha: ~
-articles: []
-last_built: 2020-04-22T04:14Z
+articles:
+  lens2r_usage: lens2r_usage.html
+  understanding_lens_api: understanding_lens_api.html
+last_built: 2020-04-22T16:21Z
 
