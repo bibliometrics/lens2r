@@ -1,12 +1,15 @@
 #' Get Scholarly Data from Lens
 #'
 #' @family Get Data
-#' @import httr
+#' @importFrom  httr POST
+#' @importFrom  httr add_headers
 #' @param query Your query
 #' @param token Your Lens.org API token, add to .Renviron via add_token()
 #'      function
 #' @return Content from Lens Collection
 #'
+#'
+#'@export
 get_scholarly_data <- function(query, token = NULL) {
   if (is.null(token)) token <- Sys.getenv("LENS_TOKEN")
 

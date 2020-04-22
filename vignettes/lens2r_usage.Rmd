@@ -1,0 +1,49 @@
+---
+title: "lens2r Package Usage"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{lens2r Package Usage}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# Install and Load lens2r
+
+```{r setup}
+library(lens2r)
+```
+
+# Add Lens.org API token to .Renviron
+
+```{r add token, eval=FALSE, include=FALSE}
+lens2r::add_token()
+```
+
+# Get Scholarly Data
+
+
+```{r eval=FALSE, include=FALSE}
+lens2r::get_scholarly_data()
+```
+
+# Get Collection Data
+
+```{r eval=FALSE, include=FALSE}
+lens2r::get_collection()
+
+
+
+```
+
+
+
+
+
+

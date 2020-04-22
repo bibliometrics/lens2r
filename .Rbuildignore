@@ -13,3 +13,6 @@ docs/
 ^gfortran.*
 ^tic\.R$
 ^\.travis\.yml$
+
+README_cache/
+/cache/

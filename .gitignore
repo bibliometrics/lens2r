@@ -32,3 +32,4 @@ vignettes/*.pdf
 .Renviron
 # pkgdown site
 docs/
+inst/doc
