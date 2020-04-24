@@ -188,15 +188,12 @@ me a coffee</span></a>
 
 <https://paypal.me/serdarbalci>
 
------
-
-<img src="https://cdn.buymeacoffee.com/buttons/arial-orange.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" ></a>  
-![Twitter
-Follow](https://img.shields.io/twitter/follow/serdarbalci?style=social)
 ![GitHub
-followers](https://img.shields.io/github/followers/sbalci?style=social)
+followers](https://img.shields.io/github/followers/sbalci?style=social)  
 [![Say
 Thanks\!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/sbalci)
+
+-----
 
 ## Development Status
 

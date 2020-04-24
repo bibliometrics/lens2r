@@ -20,6 +20,7 @@ Get Collection Data from Lens
 }
 \seealso{
 Other Get Data: 
-\code{\link{get_scholarly_data}()}
+\code{\link{get_scholarly_data}()},
+\code{\link{get_scholarly_df}()}
 }
 \concept{Get Data}

@@ -22,25 +22,26 @@ library(lens2r)
 
 # Add Lens.org API token to .Renviron
 
-```{r add token, eval=FALSE, include=FALSE}
+```r
+# add token
 lens2r::add_token()
 ```
 
 # Get Scholarly Data
 
 
-```{r eval=FALSE, include=FALSE}
+```r
 lens2r::get_scholarly_data()
 ```
 
 # Get Collection Data
 
-```{r eval=FALSE, include=FALSE}
+```r
 lens2r::get_collection()
-
-
-
 ```
+
+
+
 
 
 

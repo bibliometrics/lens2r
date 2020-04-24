@@ -17,11 +17,11 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.0
 Depends:
     httr,
+    jsonlite,
     magrittr
 URL: https://github.com/sbalci/lens2r
 BugReports: https://github.com/sbalci/lens2r/issues
 Suggests:
-    jsonlite,
     knitr,
     rmarkdown
 VignetteBuilder: knitr
