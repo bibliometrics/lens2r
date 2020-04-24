@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Get Scholarly Data from Lens — get_scholarly_data • lens2r</title>
+<title>Get Scholarly Data from Lens — get_scholarly_df • lens2r</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,7 @@
 
 
 
-<meta property="og:title" content="Get Scholarly Data from Lens — get_scholarly_data" />
+<meta property="og:title" content="Get Scholarly Data from Lens — get_scholarly_df" />
 <meta property="og:description" content="Get Scholarly Data from Lens" />
 
 
@@ -124,15 +124,15 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Get Scholarly Data from Lens</h1>
-    <small class="dont-index">Source: <a href='https://github.com/sbalci/lens2r/blob/master/R/get_scholarly_data.R'><code>R/get_scholarly_data.R</code></a></small>
-    <div class="hidden name"><code>get_scholarly_data.Rd</code></div>
+    <small class="dont-index">Source: <a href='https://github.com/sbalci/lens2r/blob/master/R/get_scholarly_df.R'><code>R/get_scholarly_df.R</code></a></small>
+    <div class="hidden name"><code>get_scholarly_df.Rd</code></div>
     </div>
 
     <div class="ref-description">
     <p>Get Scholarly Data from Lens</p>
     </div>
 
-    <pre class="usage"><span class='fu'>get_scholarly_data</span>(<span class='no'>query</span>, <span class='kw'>token</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>get_scholarly_df</span>(<span class='no'>query</span>, <span class='kw'>token</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>output</span> <span class='kw'>=</span> <span class='st'>"df"</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -146,16 +146,20 @@
       <td><p>Your Lens.org API token, add to .Renviron via add_token()
 function</p></td>
     </tr>
+    <tr>
+      <th>output</th>
+      <td><p>select df (dataframe) of json, default is df</p></td>
+    </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>Content from Lens Collection</p>
+    <p>Content from Lens Collection as dataframe or json</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Other Get Data: 
 <code><a href='get_collection.html'>get_collection</a>()</code>,
-<code><a href='get_scholarly_df.html'>get_scholarly_df</a>()</code></p></div>
+<code><a href='get_scholarly_data.html'>get_scholarly_data</a>()</code></p></div>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
