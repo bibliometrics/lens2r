@@ -13,6 +13,8 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: r-lib/actions/setup-r@v1
+      - name: Install dplyr
+        run: Rscript -e 'install.packages("dplyr")'
       - name: Install codemetar
         run: Rscript -e 'install.packages("codemetar")'
       - name: Render codemeta
